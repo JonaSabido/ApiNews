@@ -36,6 +36,7 @@ const validatorNewCreate = [
 
     check('titulo').notEmpty().withMessage('El campo titulo es obligatorio').isLength({ min: 2 }).withMessage('El campo titulo debe tener al menos 2 caracteres'),
     check('descripcion').notEmpty().withMessage('El campo descripcion es obligatorio').isLength({ min: 2 }).withMessage('El campo descripcion debe tener al menos 2 caracteres'),
+    check('fecha_publicacion').notEmpty().withMessage('El campo fecha de publlicacion es obligatorio').isDate().withMessage('El campo fecha de publicación debe ser una fecha valida'),
     check('imagen').notEmpty().withMessage('El campo imagen es obligatorio').isString().withMessage('El campo imagen debe ser un string'),
     check('activo').optional().isBoolean().withMessage('El campo activo debe ser un booleano'),
 
@@ -72,6 +73,7 @@ const validatorNewUpdate = [
 
     check('titulo').optional().isLength({ min: 2 }).withMessage('El campo titulo debe tener al menos 2 caracteres'),
     check('descripcion').optional().isLength({ min: 2 }).withMessage('El campo descripcion debe tener al menos 2 caracteres'),
+    check('fecha_publicacion').optional().isDate().withMessage('El campo fecha de publicación debe ser una fecha valida'),
     check('imagen').optional().isBase64().withMessage('El campo imagen debe ser un Base 64'),
     check('activo').optional().isBoolean().withMessage('El campo activo debe ser un booleano'),
 ];
